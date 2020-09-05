@@ -1,38 +1,258 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background: white;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form__input {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+	margin: 0 auto;
+  padding: 1.5rem 2rem;
+  border-radius: 0.2rem;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.3rem solid transparent;
+  transition: all 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.grid {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 25px 50px 50px;
+}
+
+.input-group {
+  display: inline-block;
+  margin: 5px;
+}
+
+.input-group > label > select {
+  margin-left: 5px;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+ /**********************************
+ *
+ *      css loader taken from...
+ * https://tobiasahlin.com/spinkit/ 
+ *
+ ***********************************/
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.card {
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.5);
+  background: white;
+  border-radius: 5px;
+  padding: 10px 10px 10px 0px;
+}
+
+.flex {
+  display: flex;
+}
+
+.--row {
+  flex-flow: row wrap;
+}
+
+.--column {
+  flex-flow: column wrap;
+}
+
+.--centered {
+  justify-content: center;
+}
+
+.--mt {
+  margin-top: 10px;
+}
+
+.query-summary {
+  margin-top: 25px;
+  font-size: 20px;
+}
+
+.query-summary > div {
+  margin-right: 15px;
+}
+
+.link {
+  color: darkcyan;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.repo-name {
+  font-size: 20px;
+}
+
+.user-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex: 1;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.username {
+  margin-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.errorMsg {
+  color: red;
+}
+
+.repo-desc {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+
+.user-icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  margin: 0 auto;
+}
+
+.language::before{
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  -moz-border-radius: 7.5px;
+  -webkit-border-radius: 7.5px;
+  border-radius: 7.5px;
+  background-color: turquoise;
+}
+
+.language.Swift::before{
+  background-color: orange;
+}
+
+.language.Java::before{
+  background-color: red;
+}
+
+.language.JavaScript::before{
+  background-color: yellow;
+}
+
+.language.Typescript::before{
+  background-color: darkgreen;
+}
+
+.tiny {
+  font-size: .75rem;
+}
+
+.modal-backdrop {
+  z-index: 100;
+  background: black;
+  opacity: .5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 500px;
+  min-width: 500px;
+  background: white;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.modal__actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 35px;
+  padding: 15px 30px;
+  right: 0;
+}
+
+.button {
+  cursor: pointer;
+  display:inline-block;
+  padding:0.2em 1.45em;
+  margin:0.1em;
+  border:0.15em solid #CCCCCC;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Segoe UI','Roboto',sans-serif;
+  font-weight:400;
+  color:#000000;
+  background-color:#CCCCCC;
+  text-align:center;
+  position:relative;
+}
+
+.button:hover {
+  border-color:#7a7a7a;
+}
+
+.input--simple {
+  padding: 5px;
+}
+
+.button:disabled,
+.button[disabled]{
+  cursor: default;
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
