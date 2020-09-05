@@ -1,3 +1,17 @@
+## Roadmap/Notes - list of todo's not in any particular order
+
+1. Code cleanup
+ - Move modal render html to component
+ - Move user info contents (used for modal) to component
+ - (optional) move components to external file 
+ - externalize/generalize github display/search. intention will be to use it as projects cards on personal site.
+2. Research Bit - https://bit.dev/
+ - Found this in search of shared components in React. Github display/search is good candidate.
+3. Add capability to use credentials w/ configuration. Intention is if I want to deploy this.
+4. Include bootstrap theming. Used just css for v1, but ideally let's use bootstrap for all projects as base theming.
+5. Refactor code to handle multiple screen sizes, it's pretty rigid atm.
+6. External configurable to show user/github info and other static constants
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
